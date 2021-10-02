@@ -1,0 +1,65 @@
+<html>
+    <!-- <title>Home Page</title> -->
+   <head>
+       <meta name='viewport' content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="licksandcuddles.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <style type="text/css">
+           #top {background-image: url('pictures/dogandcat.jpg');  background-size:cover; 
+               height: 400px;  width: 100%; padding-top: 75px; box-sizing:border-box;
+               text-align:center; font-size:  20px;  position:absolute;  color: white;};
+           #content {position: absolute;}
+           .col {background-color:#BD9A7A; width: 100%; display: inline-block; height: 800px;
+               padding-top: 475px; text-align:center; font-size:  20px; color:white;}
+          
+       </style>
+   </head>
+   <body>
+       <!-- navigation -->
+       <nav>
+       <h4>Cuddles & Pets</h4>
+       <div class="topnav" id="myTopnav">
+           
+            <a class="active" href="index.html">Home</a>
+            <a href="pages/contactuspage.html">Contact Us</a>
+            <a href="pages/servicespage.html">Services</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+       </nav>
+       <!-- header/welcome -->
+       <div id="top">
+           <h1>Welcome to Cuddles & Pets!</h1>
+           <p>Come here to distress with human's bestfriends.</p>
+       </div>
+ 
+       <div id = "content">
+           <div class="col">
+           <p>Cuddles & Pets is the place to come after a rough day to cuddle and play with dogs and cats.</p>
+           <p>After a long day at work or at school, sometimes all we need is some love to make our whole day better.</p>
+           <p>We are here to turn your day around.</p>
+           </div>
+       </div>
+
+       <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+      
+       <!-- <div style="background-image: url('pictures/dogandcat.jpg');" class="back-img">
+       </div> -->
+       <footer class="page-footer">
+           Created by: Vanesa Gonzalez Torres
+       </footer>
+
+       <!-- description-->
+          
+   </body>
+</html>
