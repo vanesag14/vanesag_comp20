@@ -1,0 +1,30 @@
+song_list {
+    background-color: #8ABD91;
+    width: 100%;
+}
+
+song {
+    margin-left: 20pt;
+    display: block;
+    margin-bottom: 20pt;
+}
+
+title {
+    display: block;
+    font-size: 30px;
+}
+
+artist {
+    display: block;
+    font-size: 20px;
+}
+
+genre, year {
+    display: block;
+    font-size: 18px;
+}
+
+title, artist, genre, year {
+    color: white; 
+    font-family: Georgia, serif;
+}

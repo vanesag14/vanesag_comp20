@@ -1,0 +1,81 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<?xml-stylesheet type="text/css" href="songlistformat.css"?>
+
+<song_list>
+    <song>
+        <title>Nights</title>
+        <artist>Frank Ocean</artist>
+        <genre>Pop</genre>
+        <year>2016</year>
+    </song>
+    
+    <song>
+        <title>Lost</title>
+        <artist>Frank Ocean</artist>
+        <genre>Pop</genre>
+        <year>2012</year>
+    </song>
+
+    <song>
+        <title>Wicked Games</title>
+        <artist>The Weeknd</artist>
+        <genre>Soul</genre>
+        <year>2011</year>
+    </song>
+
+    <song>
+        <title>Professional</title>
+        <artist>The Weeknd</artist>
+        <genre>Soul</genre>
+        <year>2013</year>
+    </song>
+
+    <song>
+        <title>Necio</title>
+        <artist>Romeo Santos, Carlos Cantana</artist>
+        <genre>Bachata</genre>
+        <year>2014</year>
+    </song>
+
+    <song>
+        <title>Kiss Me More</title>
+        <artist>Doja Cat, SZA</artist>
+        <genre>Pop</genre>
+        <year>2021</year>
+    </song>
+
+    <song>
+        <title>Hawai</title>
+        <artist>Maluma, The Weeknd</artist>
+        <genre>Pop</genre>
+        <year>2020</year>
+    </song>
+
+    <song>
+        <title>The Worst</title>
+        <artist>Jhene Aiko</artist>
+        <genre>Soul</genre>
+        <year>2013</year>
+    </song>
+
+    <song> 
+        <title>No Se Decirte No</title>
+        <artist>Marco Mares</artist>
+        <genre>Pop</genre>
+        <year>2019</year>
+    </song>
+
+    <song>
+        <title>Piel de Seda</title>
+        <artist>Esteban Gabriel</artist>
+        <genre>Pop</genre>
+        <year>2019</year>
+    </song>
+
+    <song>
+        <title>All I want</title>
+        <artist>Kodaline</artist>
+        <genre>Indie</genre>
+        <year>2013</year>
+    </song>
+</song_list>
