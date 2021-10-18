@@ -1,0 +1,150 @@
+
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        div {
+            background-color: #ffe9ec;
+            border: 15px solid pink;
+            margin: auto;
+            width: 30%;
+            padding: 20px;
+            border-radius: 30px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1 align="center">Lottery Simulator</h1>
+        <div>
+        <script language="javascript">
+            // generating number pick
+            // creates an empty array of size 5
+            numbers = new Array(5);
+
+            // generates 5 random numbers ranging 1 - 48, assigns
+            // numbers to array
+            for (i = 0; i < 5; i++) {
+                numbers[i] = Math.floor(Math.random() * 48) + 1;
+            }
+
+            // creates lucky ball, which is a random number ranging 1 - 18
+            lucky_num = Math.floor(Math.random() * 18) + 1;
+
+            // checks if there are any duplicate numbers
+            // reassigns number in array if any duplicates are found
+            not_unique = true;
+            while (not_unique) {
+                for (i = 0; i < 5; i++) {
+                    for (j = 0; j < 5; j++) {
+                        if (i != j && numbers[i] == numbers[j]) {
+                            numbers[i] = Math.floor(Math.random() * 48) + 1;
+                        }
+                    }
+                }
+                not_unique = false;
+            }
+
+            // prints unsorted random pick to screen + lucky number
+            document.write("Random pick: ");
+            for (i = 0; i < 5; i++) {
+                document.write(numbers[i] + " ");
+            }
+            document.write("lucky " + lucky_num + "</br></br>");
+
+            // sorts array
+            numbers = numbers.sort(function(a, b){return a - b});
+
+            // prints out numbers in format wanted + lucky ball number
+            document.write("Pick sorted: ");
+            for (i = 0; i < 5; i++) {
+                document.write(numbers[i] + " ");
+            }
+            document.write("lucky " + lucky_num + "</br>");
+
+        
+            // getting winning numbers
+            array_num = prompt("Enter winning numbers:");
+            document.write ("</br>");
+            winning_lucky = prompt("Enter lucky ball number: ");
+            // splits array num using spaces since spaces separate the numbers
+            winning_num = array_num.split(" ");
+            // sorts winning numbers
+            winning_num = winning_num.sort(function(a, b){return a -b });
+            // prints out sorted numbers
+            document.write("Winning numbers sorted: ");
+            for (i = 0; i < 5; i++) {
+                document.write(winning_num[i] + " ");
+            }
+            document.write(" lucky " + winning_lucky + "</br></br>");
+
+            // converts string values into int values
+            for (i = 0; i < 5; i++) {
+                winning_num[i] = parseInt(winning_num[i]);
+            }
+
+            // finds number of matching numbers
+            match = 0;
+            for (i = 0; i < 5; i++) {
+                for (j = 0; j < 5; j++) {
+                    if (numbers[i] == winning_num[j]) {
+                        match++;
+                    }
+                }
+            }
+            // prints out the amount of matching numbers
+            document.write("Matching numbers: " + match + "</br></br>");
+
+            // determines if picked lucky num matches winning lucky ball number
+            lucky_ball = false;
+            if (winning_lucky != lucky_num) {
+                document.write("Luck ball does not match </br></br>");
+                lucky_ball = false;
+            }
+            else {
+                document.write("Lucky ball matches </br></br>");
+                document.write ("</br>");
+                lucky_ball = true;
+            }
+
+            // determines winnings based on matching numbers and whether
+            // the user determined the lucky ball number of not
+            // prints out winning amount, if any
+            document.write("Your winnings: ");
+            if(match == 5 && lucky_ball == true) {
+                document.write("$7,000 a WEEK for LIFE");
+            }
+            else if (match == 5  && lucky_ball == false) {
+                document.write("$25,000 a YEAR for LIFE");
+            }
+            else if(match == 4 && lucky_ball == true) {
+                document.write("$5,000");
+            }
+            else if (match == 4  && lucky_ball == false) {
+                document.write("$200");
+            }
+            else if(match == 3 && lucky_ball == true) {
+                document.write("$150");
+            }
+            else if (match == 3  && lucky_ball == false) {
+                document.write("$20");
+            }
+            else if(match == 2 && lucky_ball == true) {
+                document.write("$25");
+            }
+            else if (match == 2  && lucky_ball == false) {
+                document.write("$3");
+            }
+            else if(match == 1 && lucky_ball == true) {
+                document.write("$6");
+            }
+            else if (match == 0  && lucky_ball == true) {
+                document.write("$4");
+            }
+            else {
+                document.write("$0");
+            }
+        </script>
+        </div>
+    </body>
+</html>

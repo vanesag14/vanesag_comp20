@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <style type="text/css"> 
+        input[type=text] {
+          width: 25%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          align-content: center;
+          border-radius: 30px;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 12px 20px;
+            text-align: center;
+            background-color: #F0FFF0;
+            border: 10px solid #d0f0c0;
+            border-radius: 30px;
+        }
+        div {
+            text-align: center;
+        }
+        button[type=button] {
+            background-color: #d0f0c0;
+            border: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+        body {
+            background-color:#F5FFFA;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1 align="center">Amicable numbers</h1>
+        <form>
+            <label for="value_1"><strong>First value:</strong></label><br>
+            <input type="text" id="val1" name="value_1"><br>
+            <label for="value_2"><strong>Second value:</strong> </label><br>
+            <input type="text" id="val2" name="value_2"><br><br>
+            <button type="button" value="Submit" onclick="results()">
+                <strong>Test numbers</strong>
+            </button>
+          </form> 
+          <div id="results">
+              <h2>Are the numberes amicable?</h2>
+          </div>
+          <div>
+              <script language="javascript">
+                // function gets numbers from form, then uses them
+                // to call other functions and get results
+                function results() {
+                    num1 = document.getElementById("val1").value;
+                    num2 = document.getElementById("val2").value;
+
+                    factors1 = get_factors(num1);
+                    sum1 = add_factors(factors1);
+                    factors2 = get_factors(num2);
+                    sum2 = add_factors(factors2);
+                    are_amicable = compare_sum(num1, sum1, num2, sum2);
+                    print(are_amicable);
+                    pop_ups(num1, factors1, num2, factors2);
+                    
+                }
+
+                // function takes number as input and returns the
+                // factors of number
+                function get_factors(num) {
+                    arr = [];
+                    for(i = 1; i <= num - 1; i++) {
+                        // check if number is a factor
+                        if(num % i == 0) {
+                            // uses function push to add factor to end 
+                            // of array
+                            arr.push(i);
+                        }
+                    }
+                    return arr;
+                }
+
+                // fuction takes array as input and returns the sum of 
+                // all elements in array
+                function add_factors(arr) {
+                    sum = 0;
+                    for (j = 0; j < arr.length; j++) {
+                        sum += arr[j];
+                    }
+                    return sum;
+                }
+
+                // function compares the sum of the factors of each number to the
+                // other number in order to determine if numbers are amicable
+                function compare_sum(num1, sum1, num2, sum2) {
+                    are_amicable = false;
+                    if (num1 == sum2 && num2 == sum1) {
+                        are_amicable = true;
+                        
+                    }
+                    return are_amicable;
+
+                }
+
+                // prints statement depending if numbers are amicable or not
+                function print(are_amicable) {
+                    if (are_amicable == true) {
+                        document.getElementById('results').innerHTML = 
+                                                    "</br>The numbers " 
+                                                    + num1 + " and " + num2 + 
+                                                    " are amicable";
+                    }
+                    else {
+                        document.getElementById('results').innerHTML = 
+                                                    "</br> The numbers " 
+                                                    + num1 + " and " + num2 + 
+                                                    " are not amicable";
+                    }
+                }
+
+                // prints pop up displaying factors of each number
+                function pop_ups(num1, factors1, num2, factors2) {
+                    pop_up = "The factors of " + num1 + " are: " + factors1 + "\n";
+                    pop_up += "The factors of " + num2 + " are: " + factors2;
+                    alert(pop_up);
+                }
+              </script>
+          </div>
+    </body>
+</html>
