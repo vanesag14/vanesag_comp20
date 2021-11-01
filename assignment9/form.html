@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <title>Filter Songs</title>
+    <meta charset="utf-8"/>
+    <style>
+        body {
+            background-color: #D4F1F4;
+            font-family: 'Zen Kurenaido', sans-serif;
+            font-size: 15px;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Zen Kurenaido', sans-serif;
+        }
+    </style>
+    
+    </head>
+    <body onload="load_file()">
+        <!-- creates form with drop down -->
+        <h1>Vanesa's Go-To Playlist</h1>
+        <h2>Time to listen to some jams...</h2>
+        <form>
+            <button style= "font-family: 'Zen Kurenaido', sans-serif;" 
+            type = "button" onclick="get_genre()">FILTER</button>
+            </br></br>
+            <label for="genre">Choose genre: </label>
+            <select id = "genre" name = "genre"style= "font-family: 'Zen Kurenaido', sans-serif;">
+                <option value= "Pop">EL POP</option>
+                <option value= "Indie">EL INDIE</option>
+                <option value= "Bachata">LA BACHATA</option>
+                <option value= "Soul">EL SOUL MUSIC</option>
+            </select>
+        </form>
+        <div id="cData">&nbsp;</div>
+        <div id="data"></div>
+    </body>
+
+    <script>
+        // I referenced loadFile() from read_json_ajax.html and contray_axax2.html
+        function load_file() {
+        request = new XMLHttpRequest();
+        console.log("1 - request object created");
+
+        // opens json file at remote location/set urll for ajax request to be json file
+        request.open("GET", "https://vanesag14.github.io/vanesag_comp20/songs.json", true);
+        console.log("2 - opened request file");
+
+        // set up callback
+        request.onreadystatechange = function() {
+            console.log("3 - readystatechange event fired.");
+
+            // runs if successful
+            if (request.readyState == 4 && request.status == 200) {
+                result = request.responseText;
+                songs = JSON.parse(result);
+                strHTML = "<ul>";
+                    songs.forEach(function(song) {
+                        strHTML += "<br/>" 
+                                + song.title + "<br/>" 
+                                + "Artist(s): " + song.artist + "<br/>"
+                                + "Genre: " + song.genre[0] +"<br/>"
+                                + "Released: " + song.year + "<br/>"
+                    })
+                    document.getElementById("data").innerHTML =strHTML;
+                }
+                else if (request.readyState == 4 && request.status != 200) {
+                    document.getElementById("data").innerHTML = "Something is wrong!";
+                }
+                else if (request.readyState == 3) {
+                    document.getElementById("data").innerHTML = "Far too soon! Try again";
+                }
+            }
+            // sends HTTP request
+            request.send();
+            console.log("4 - Request sent");
+        }
+
+        // filters songs based on chosen genre
+        function get_genre() {
+            chosen = document.forms[0].genre.value;
+            strHTML = "<ul>";
+                songs.forEach(function(song) {
+                    // returns back songs that match chosen genre
+                    if (chosen == song.genre[0]) {
+                        strHTML +=  "<br/>" 
+                                + song.title + "<br/>" 
+                                + "Artist(s): " + song.artist + "<br/>"
+                                + "Genre: " + song.genre[0] +"<br/>"
+                                + "Released: " + song.year + "<br/>"
+                        document.getElementById("data").innerHTML =strHTML;
+                    }
+                })
+            }
+    </script>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JSON</title>
+        <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <script language="javascript">
+            // json_get_example.html was referenced with this code
+            // reading in data
+            $.get("https://vanesag14.github.io/vanesag_comp20/songs.json", 
+                function( data ) {
+                    // stringifying data and printing it
+                    str = JSON.stringify(data);
+                    document.write("Raw string: <br/> <br/>")
+                    document.write(str +"<br/>");
+                    // displaying data in user friendly way
+                    strHTML= "<ul>";
+                    data.forEach(function(songs) { 
+                    strHTML += "<br/>" 
+                            + songs.title + "<br/>" 
+                            + "Artist(s): " + songs.artist + "<br/>"
+                            + "Genre: " + songs.genre + "<br/>"
+                            + "Released: " + songs.year + "<br/>";
+                        }) 
+                    document.write(strHTML);
+                    }
+                )
+        </script>
+    </body>
+</html>
