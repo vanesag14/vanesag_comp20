@@ -24,19 +24,19 @@
         "year": "2013"
     },
     {
-        "artist": ["Romeo Santos","Carlos Cantata"],
+        "artist": "Romeo Santos",
         "title": "Necio",
         "genre": ["Bachata"],
         "year": "2014"
     },
     {
-        "artist": ["Doja Cat","SZA"],
+        "artist": "SZA"
         "title": "Kiss Me More",
         "genre": ["Pop"],
         "year": "2021"
     },
     {
-        "artist": ["Maluma","The Weeknd"],
+        "artist": "Maluma"
         "title": "Hawai",
         "genre": ["Pop"],
         "year": "2020"
