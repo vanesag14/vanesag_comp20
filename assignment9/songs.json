@@ -2,67 +2,67 @@
     {
         "artist": "Frank Ocean",
         "title": "Nights",
-        "genre": "Pop",
+        "genre": ["Pop"],
         "year": "2016"
     },
     {
         "artist": "Frank Ocean",
         "title": "Lost",
-        "genre": "Pop",
+        "genre": ["Pop"],
         "year": "2012"
     },
     {
         "artist": "The Weeknd",
         "title": "Wicked Games",
-        "genre": "Soul",
+        "genre": ["Soul"],
         "year": "2011"
     },
     {
         "artist": "The Weeknd",
-        "title": "Professional",
+        "title": ["Professional"],
         "genre": "Soul",
         "year": "2013"
     },
     {
         "artist": ["Romeo Santos","Carlos Cantata"],
         "title": "Necio",
-        "genre": "Bachata",
+        "genre": ["Bachata"],
         "year": "2014"
     },
     {
         "artist": ["Doja Cat","SZA"],
         "title": "Kiss Me More",
-        "genre": "Pop",
+        "genre": ["Pop"],
         "year": "2021"
     },
     {
         "artist": ["Maluma","The Weeknd"],
         "title": "Hawai",
-        "genre": "Pop",
+        "genre": ["Pop"],
         "year": "2020"
     },
     {
         "artist": "Jhene Aiko",
         "title": "The Worst",
-        "genre": "Soul",
+        "genre": ["Soul"],
         "year": "2013"
     },
     {
         "artist": "Marco Mares",
         "title": "No Se Decirte No",
-        "genre": "Pop",
+        "genre": ["Pop"],
         "year": "2019"
     },
     {
         "artist": "Esteban Gabriel",
         "title": "Piel de Seda",
-        "genre": "Pop",
+        "genre": ["Pop"],
         "year": "2019"
     },
     {
         "artist": "All I Want",
         "title": "Kodaline",
-        "genre": "Indie",
+        "genre": ["Indie"],
         "year": "2013"
     }
 ]
