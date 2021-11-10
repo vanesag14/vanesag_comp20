@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <title>Random String</title>
+    <meta charset="utf-8"/>
+    <style>
+        body {
+            background-color: #ECE3F0;
+            font-family: 'Zen Kurenaido', sans-serif;
+            font-size: 18px;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Zen Kurenaido', sans-serif;
+        }
+    </style>
+    </head>
+    <script>
+        // I referenced loadFile() from read_json_ajax.html and contray_axax2.html
+        function get_string() {
+        request = new XMLHttpRequest();
+        console.log("1 - request object created");
+
+        // opens json file at remote location/set urll for ajax request to be json file
+        request.open("GET", "https://ciprand.p3p.repl.co/api?len=20&count=1", true);
+        console.log("2 - opened request file");
+
+        // set up callback
+        request.onreadystatechange = function() {
+            console.log("3 - readystatechange event fired.");
+
+            // runs if successful
+            // gets random string
+            if (request.readyState == 4 && request.status == 200) {
+                result = request.responseText;
+                ran_string = JSON.parse(result); 
+                
+                document.getElementById("data").innerHTML = "YOUR RANDOM STRING: " 
+                + ran_string["Strings"] + "</br></br>THE LENGTH OF STRING IS: " 
+                + ran_string["Length"];
+                }
+                else if (request.readyState == 4 && request.status != 200) {
+                    document.getElementById("data").innerHTML = "Something is wrong!";
+                }
+                else if (request.readyState == 3) {
+                    document.getElementById("data").innerHTML = "Far too soon! Try again";
+                }
+            }
+            // sends HTTP request
+            request.send();
+            console.log("4 - Request sent");
+        }
+    </script>
+    <body sytle="align-items: center">
+        <h1>RANDOM STRING GENERATOR</h1>
+        <form>
+            <label>GET RANDOM STRING</label>
+        </br></br>
+            <button style= "font-family: 'Zen Kurenaido', sans-serif;" 
+            type = "button" onclick="get_string()">GET</button>
+            </br></br>
+        </form>
+        <div id="data"></div>
+        </br>
+        <div>
+            <p>
+                This is a random string generator. It is pretty self explanatory -- it simply
+                generates a random string for you!
+            </p>
+            <p>
+                The API lets you choose how many random 
+                strings you want, and the length of the strings.
+            </p>
+            <p>
+                This API would be helpful to generate random passwords! 
+                This API would also be helpful for cryptography.
+            </p>
+            </br>
+            <p>
+                For the request, I decided to only choose one string at a time with a length of 20.
+            </p>
+            <p>
+                Here is the request: https://ciprand.p3p.repl.co/api?len=20&count=1
+            </p>
+            <p>
+                Citation: https://github.com/polarspetroll/ciprand
+            </p>
+        </div>
+    </body>
+</html>
