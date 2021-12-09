@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Titillium+Web:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+        <style> 
+            input[type=text] {
+              width: 30%;
+              padding: 12px 20px;
+              margin: 8px 0;
+            }
+            label, p {
+                font-family: 'Lato', sans-serif;
+                font-family: 'Titillium Web', sans-serif;
+                font-family: 'Zen Kurenaido', sans-serif;
+                color:white;
+                font-size: 20px;
+            }
+            form { 
+            margin: 0 auto; 
+            width: 250px;
+            font-size: 20px;
+            }
+            h1 {
+                font-family: 'Lato', sans-serif;
+                font-family: 'Titillium Web', sans-serif;
+                font-family: 'Zen Kurenaido', sans-serif;
+                font-size: 50px;
+                color:white;
+            }
+            body {
+                background-color: #FB8DA0;
+            }
+
+            </style>
+    </head>
+    <body>
+
+    <h1 align="center">Stock Ticker App</h1>
+
+    <form>
+    <p>Select entry type:</p>
+    <input type="radio" id="name" name="decision" value="name">
+    <label for="name">Company name</label></br>
+    <input type="radio" id="ticker" name="decision" value="ticker">
+    <label for="ticker">Stock ticker symbol</label></br>
+
+    </br>
+
+    <label for="entry">Entry</label>
+    </br>
+    <input type="text" id="entry" name="entry">
+    </br>
+    </br>   
+    <input type="submit" value="Submit">
+    </form>
+
+    </body>
+</html>
